@@ -38,6 +38,15 @@ class _RoutesPageState extends ConsumerState<RoutesPage> {
   Widget build(BuildContext context) {
     final lines = ref.watch(linesProvider).value ?? const <String, Line>{};
     ref.watch(metroGraphProvider);
+    final prefillOrigin = ref.watch(selectedRouteOriginProvider);
+    if (prefillOrigin != null) {
+      _origin = prefillOrigin;
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (mounted) {
+          ref.read(selectedRouteOriginProvider.notifier).state = null;
+        }
+      });
+    }
     return Scaffold(
       appBar: AppBar(title: const Text('Rotas')),
       body: Padding(
@@ -47,6 +56,7 @@ class _RoutesPageState extends ConsumerState<RoutesPage> {
             StationPicker(
               label: 'Origem',
               suggestionsFirst: true,
+              initialValue: prefillOrigin,
               onSelected: (station) => setState(() => _origin = station),
             ),
             const SizedBox(height: 16),

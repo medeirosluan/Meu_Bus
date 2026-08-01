@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:seu_metro/models/station.dart';
+import 'package:seu_metro/providers/navigation.dart';
 import 'package:seu_metro/providers/repositories.dart';
 import 'package:seu_metro/theme/line_colors.dart';
 
@@ -15,6 +16,9 @@ void showStationSheet(BuildContext context, Station station) {
 
 class _StationSheet extends ConsumerWidget {
   const _StationSheet({required this.station});
+
+  static const _routesTab = 1;
+  static const _schedulesTab = 3;
 
   final Station station;
 
@@ -74,7 +78,10 @@ class _StationSheet extends ConsumerWidget {
               children: [
                 Expanded(
                   child: FilledButton.icon(
-                    onPressed: () => Navigator.of(context).pop(),
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                      ref.read(selectedTabProvider.notifier).state = _schedulesTab;
+                    },
                     icon: const Icon(Icons.schedule),
                     label: const Text('Ver horários'),
                   ),
@@ -82,7 +89,11 @@ class _StationSheet extends ConsumerWidget {
                 const SizedBox(width: 12),
                 Expanded(
                   child: OutlinedButton.icon(
-                    onPressed: () => Navigator.of(context).pop(),
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                      ref.read(selectedRouteOriginProvider.notifier).state = station;
+                      ref.read(selectedTabProvider.notifier).state = _routesTab;
+                    },
                     icon: const Icon(Icons.directions),
                     label: const Text('Como chegar'),
                   ),

@@ -6,6 +6,7 @@ import 'package:geolocator/geolocator.dart';
 import 'package:seu_metro/models/line.dart';
 import 'package:seu_metro/models/line_status.dart';
 import 'package:seu_metro/models/station.dart';
+import 'package:seu_metro/providers/navigation.dart';
 import 'package:seu_metro/providers/repositories.dart';
 import 'package:seu_metro/providers/status_provider.dart';
 import 'package:seu_metro/services/location/nearest_station.dart';
@@ -19,6 +20,8 @@ class StatusPage extends ConsumerStatefulWidget {
 }
 
 class _StatusPageState extends ConsumerState<StatusPage> {
+  static const _routesTab = 1;
+
   Timer? _refreshTimer;
   bool _locating = false;
   bool _gpsDenied = false;
@@ -272,7 +275,12 @@ class _StatusPageState extends ConsumerState<StatusPage> {
                     ),
                   ),
                   FilledButton.tonal(
-                    onPressed: () {},
+                    onPressed: () {
+                      final nearest = _nearest;
+                      if (nearest == null) return;
+                      ref.read(selectedRouteOriginProvider.notifier).state = nearest;
+                      ref.read(selectedTabProvider.notifier).state = _routesTab;
+                    },
                     child: const Text('Como chegar'),
                   ),
                 ],

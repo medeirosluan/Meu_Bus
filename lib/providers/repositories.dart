@@ -35,6 +35,8 @@ final favoritesProvider =
     StateNotifierProvider<FavoritesNotifier, Set<String>>(
         (ref) => FavoritesNotifier(ref.watch(favoritesRepositoryProvider)));
 
+final selectedRouteOriginProvider = StateProvider<Station?>((ref) => null);
+
 class FavoritesNotifier extends StateNotifier<Set<String>> {
   final FavoritesRepository _repo;
   FavoritesNotifier(this._repo) : super(const {}) {

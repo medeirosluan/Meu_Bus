@@ -9,11 +9,13 @@ class StationPicker extends ConsumerStatefulWidget {
     required this.label,
     required this.onSelected,
     this.suggestionsFirst = false,
+    this.initialValue,
   });
 
   final String label;
-  final ValueChanged<Station> onSelected;
+  final ValueChanged<Station?> onSelected;
   final bool suggestionsFirst;
+  final Station? initialValue;
 
   @override
   ConsumerState<StationPicker> createState() => _StationPickerState();
@@ -21,6 +23,27 @@ class StationPicker extends ConsumerStatefulWidget {
 
 class _StationPickerState extends ConsumerState<StationPicker> {
   final TextEditingController _controller = TextEditingController();
+  Station? _selected;
+
+  @override
+  void initState() {
+    super.initState();
+    final initial = widget.initialValue;
+    if (initial != null) {
+      _selected = initial;
+      _controller.text = initial.name;
+    }
+  }
+
+  @override
+  void didUpdateWidget(StationPicker oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    final initial = widget.initialValue;
+    if (initial != null && initial.id != oldWidget.initialValue?.id) {
+      _selected = initial;
+      _controller.text = initial.name;
+    }
+  }
 
   @override
   void dispose() {
@@ -30,6 +53,7 @@ class _StationPickerState extends ConsumerState<StationPicker> {
 
   void _select(Station station) {
     setState(() {
+      _selected = station;
       _controller.text = station.name;
     });
     widget.onSelected(station);
@@ -48,7 +72,14 @@ class _StationPickerState extends ConsumerState<StationPicker> {
 
     final field = TextField(
       controller: _controller,
-      onChanged: (_) => setState(() {}),
+      onChanged: (text) {
+        final selected = _selected;
+        if (selected != null && text.trim() != selected.name) {
+          _selected = null;
+          widget.onSelected(null);
+        }
+        setState(() {});
+      },
       decoration: InputDecoration(
         labelText: widget.label,
         border: const OutlineInputBorder(),
