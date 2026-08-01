@@ -43,8 +43,29 @@ void main() {
     expect(plan.legs.length, 2);
     expect(plan.legs.last.lineId, '2');
     expect(plan.transferStationNames, ['luz']);
-    // 2 arestas na linha 1 (tucuruvi->santana->luz) + 3 de baldeação + 1 aresta na linha 2
-    expect(plan.totalMinutes, 2 * 2 + 3 + 1 * 2);
+    // Tempo exibível: 2 arestas na linha 1 (4 min) + 1 aresta na linha 2 (2 min) + 3 min de baldeação
+    expect(plan.totalMinutes, 2 * 2 + 1 * 2 + 3);
+  });
+
+  test('rota com menos baldeações vence mesmo sendo mais lenta', () {
+    final lineA = _line('A', ['x', 's1', 's2', 's3', 's4', 'y']);
+    final lineB = _line('B', ['x', 't']);
+    final lineC = _line('C', ['t', 'y']);
+    final stations = [
+      _st('x', ['A', 'B']),
+      _st('s1', ['A']),
+      _st('s2', ['A']),
+      _st('s3', ['A']),
+      _st('s4', ['A']),
+      _st('t', ['B', 'C']),
+      _st('y', ['A', 'C']),
+    ];
+    final graph = MetroGraph.build([lineA, lineB, lineC], stations);
+    final plan = graph.plan('x', 'y')!;
+    expect(plan.legs.length, 1);
+    expect(plan.legs.first.lineId, 'A');
+    expect(plan.transferStationNames, isEmpty);
+    expect(plan.totalMinutes, 10);
   });
 
   test('origem igual ao destino retorna plano vazio', () {
