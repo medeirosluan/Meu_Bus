@@ -23,5 +23,7 @@ void main() {
     expect(find.descendant(of: navBar, matching: find.text('Favoritos')), findsOneWidget);
     expect(find.descendant(of: navBar, matching: find.text('Mapa')), findsNothing);
     expect(find.text('Origem'), findsOneWidget);
+    final navBarWidget = tester.widget<NavigationBar>(find.byType(NavigationBar));
+    expect(navBarWidget.backgroundColor, const Color(0xFF00378C));
   });
 }
