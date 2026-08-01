@@ -99,7 +99,11 @@ void main() {
     final graph = MetroGraph.build(lines, stations);
     final plan = graph.plan('luz', 'santo_amaro');
     expect(plan, isNotNull);
-    expect(plan!.totalMinutes, greaterThan(0));
+    expect(plan!.legs.length, 2);
+    expect(plan.transferStationNames, ['Pinheiros']);
+    expect(plan.legs[0].lineId, '4');
+    expect(plan.legs[1].lineId, '9');
+    expect(plan.totalMinutes, greaterThan(0));
   });
 
   test('integração: sentido tucuruvi->jabaquara aponta para Jabaquara', () {
