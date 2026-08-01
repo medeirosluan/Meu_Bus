@@ -39,6 +39,41 @@ void main() {
     expect(find.textContaining('Operação Normal'), findsWidgets);
   });
 
+  testWidgets('StatusPage dispara o refresh no intervalo configurado', (tester) async {
+    var fetches = 0;
+    final snapshot = StatusSnapshot(
+      data: [LineStatus(lineId: '1', statusCode: 'OperacaoNormal', statusLabel: 'Operação Normal', statusColor: 'verde', description: null, updatedAt: DateTime.now())],
+      updatedAt: DateTime.now(),
+      isStale: false,
+    );
+    final status = statusProvider.overrideWith((ref) async {
+      fetches++;
+      return snapshot;
+    });
+    final settings = settingsProvider.overrideWith((ref) => SettingsNotifier(
+      SettingsRepository(),
+      const SettingsState(
+        themeMode: ThemeMode.system,
+        refreshIntervalMinutes: 1,
+        textScale: TextScale.normal,
+        highContrast: false,
+      ),
+    ));
+    await tester.pumpWidget(ProviderScope(
+      overrides: [
+        status,
+        settings,
+        linesProvider.overrideWith((ref) => Future.value(linesFixture)),
+      ],
+      child: const MaterialApp(home: StatusPage()),
+    ));
+    await tester.pump();
+    expect(fetches, 1);
+    await tester.pump(const Duration(minutes: 2));
+    await tester.pump();
+    expect(fetches, 2);
+  });
+
   testWidgets('StatusPage mostra cartões com bloco de cor e chip', (tester) async {
     final snapshot = StatusSnapshot(
       data: [
