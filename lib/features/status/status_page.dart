@@ -148,7 +148,6 @@ class _StatusPageState extends ConsumerState<StatusPage> {
       }
     });
     return Scaffold(
-      appBar: AppBar(title: const Text('Status ao vivo')),
       body: RefreshIndicator(
         onRefresh: _refresh,
         child: ListView(

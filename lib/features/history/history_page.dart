@@ -26,7 +26,6 @@ class _HistoryPageState extends ConsumerState<HistoryPage> {
     final historyAsync =
         query == null ? null : ref.watch(historyProvider(query));
     return Scaffold(
-      appBar: AppBar(title: const Text('Histórico')),
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [

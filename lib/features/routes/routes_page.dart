@@ -58,7 +58,6 @@ class _RoutesPageState extends ConsumerState<RoutesPage> {
       });
     }
     return Scaffold(
-      appBar: AppBar(title: const Text('Rotas')),
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: ListView(

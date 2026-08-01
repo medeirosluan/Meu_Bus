@@ -27,5 +27,8 @@ void main() {
     expect(find.text('Origem'), findsOneWidget);
     final navBarWidget = tester.widget<NavigationBar>(find.byType(NavigationBar));
     expect(navBarWidget.backgroundColor, const Color(0xFF00378C));
+    expect(find.byIcon(Icons.menu), findsOneWidget);
+    expect(find.text('Seu Metrô'), findsOneWidget);
+    expect(find.text('Rotas'), findsWidgets);
   });
 }

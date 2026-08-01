@@ -14,7 +14,6 @@ class FavoritesPage extends ConsumerWidget {
     final stationsAsync = ref.watch(stationsProvider);
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Favoritos')),
       body: stationsAsync.when(
         loading: () => const Center(child: CircularProgressIndicator()),
         error: (e, _) =>
