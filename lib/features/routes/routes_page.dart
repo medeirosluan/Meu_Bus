@@ -27,12 +27,18 @@ class _RoutesPageState extends ConsumerState<RoutesPage> {
     final graph = ref.read(metroGraphProvider).value;
     if (graph == null) return;
     if (origin.id == destination.id) {
-      setState(() => _sameStation = true);
+      setState(() {
+        _noRoute = false;
+        _sameStation = true;
+      });
       return;
     }
     final plan = graph.plan(origin.id, destination.id);
     if (plan == null) {
-      setState(() => _noRoute = true);
+      setState(() {
+        _sameStation = false;
+        _noRoute = true;
+      });
       return;
     }
     setState(() {
