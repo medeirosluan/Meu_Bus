@@ -1,0 +1,1525 @@
+{
+  "stations": [
+    {
+      "id": "aacd_servidor",
+      "lat": -23.604,
+      "lon": -46.652,
+      "lines": [
+        "5"
+      ],
+      "name": "AACD-Servidor"
+    },
+    {
+      "id": "adolfo_pinheiro",
+      "lat": -23.645,
+      "lon": -46.694,
+      "lines": [
+        "5"
+      ],
+      "name": "Adolfo Pinheiro"
+    },
+    {
+      "id": "aeroporto_guarulhos",
+      "lat": -23.434,
+      "lon": -46.476,
+      "lines": [
+        "13"
+      ],
+      "name": "Aeroporto-Guarulhos"
+    },
+    {
+      "id": "agua_branca",
+      "lat": -23.523,
+      "lon": -46.678,
+      "lines": [
+        "7"
+      ],
+      "name": "Água Branca"
+    },
+    {
+      "id": "alto_da_boa_vista",
+      "lat": -23.636,
+      "lon": -46.688,
+      "lines": [
+        "5"
+      ],
+      "name": "Alto da Boa Vista"
+    },
+    {
+      "id": "alto_do_ipiranga",
+      "lat": -23.601,
+      "lon": -46.596,
+      "lines": [
+        "2"
+      ],
+      "name": "Alto do Ipiranga"
+    },
+    {
+      "id": "amador_bueno",
+      "lat": -23.573,
+      "lon": -46.988,
+      "lines": [
+        "8"
+      ],
+      "name": "Amador Bueno"
+    },
+    {
+      "id": "ana_rosa",
+      "lat": -23.578,
+      "lon": -46.646,
+      "lines": [
+        "1",
+        "2"
+      ],
+      "name": "Ana Rosa"
+    },
+    {
+      "id": "anhangabau",
+      "lat": -23.545,
+      "lon": -46.637,
+      "lines": [
+        "3"
+      ],
+      "name": "Anhangabaú"
+    },
+    {
+      "id": "antonio_gianneti",
+      "lat": -23.542,
+      "lon": -46.438,
+      "lines": [
+        "11"
+      ],
+      "name": "Antônio Giannetti"
+    },
+    {
+      "id": "antonio_joao",
+      "lat": -23.521,
+      "lon": -46.858,
+      "lines": [
+        "8"
+      ],
+      "name": "Antônio João"
+    },
+    {
+      "id": "aracare",
+      "lat": -23.499,
+      "lon": -46.33,
+      "lines": [
+        "12"
+      ],
+      "name": "Aracaré"
+    },
+    {
+      "id": "armenia",
+      "lat": -23.531,
+      "lon": -46.631,
+      "lines": [
+        "1"
+      ],
+      "name": "Armênia"
+    },
+    {
+      "id": "artur_alvim",
+      "lat": -23.535,
+      "lon": -46.52,
+      "lines": [
+        "3"
+      ],
+      "name": "Artur Alvim"
+    },
+    {
+      "id": "autodromo",
+      "lat": -23.702,
+      "lon": -46.695,
+      "lines": [
+        "9"
+      ],
+      "name": "Autódromo"
+    },
+    {
+      "id": "baltazar_fidelis",
+      "lat": -23.294,
+      "lon": -46.716,
+      "lines": [
+        "7"
+      ],
+      "name": "Baltazar Fidélis"
+    },
+    {
+      "id": "barueri",
+      "lat": -23.511,
+      "lon": -46.874,
+      "lines": [
+        "8"
+      ],
+      "name": "Barueri"
+    },
+    {
+      "id": "belem",
+      "lat": -23.55,
+      "lon": -46.596,
+      "lines": [
+        "3"
+      ],
+      "name": "Belém"
+    },
+    {
+      "id": "borba_gato",
+      "lat": -23.625,
+      "lon": -46.684,
+      "lines": [
+        "5"
+      ],
+      "name": "Borba Gato"
+    },
+    {
+      "id": "botujuru",
+      "lat": -23.246,
+      "lon": -46.735,
+      "lines": [
+        "7"
+      ],
+      "name": "Botujuru"
+    },
+    {
+      "id": "bras",
+      "lat": -23.545,
+      "lon": -46.615,
+      "lines": [
+        "10",
+        "11",
+        "12",
+        "3"
+      ],
+      "name": "Brás"
+    },
+    {
+      "id": "braz_cubas",
+      "lat": -23.568,
+      "lon": -46.231,
+      "lines": [
+        "11"
+      ],
+      "name": "Braz Cubas"
+    },
+    {
+      "id": "bresser_mooca",
+      "lat": -23.548,
+      "lon": -46.604,
+      "lines": [
+        "3"
+      ],
+      "name": "Bresser-Mooca"
+    },
+    {
+      "id": "brigadeiro",
+      "lat": -23.568,
+      "lon": -46.652,
+      "lines": [
+        "2"
+      ],
+      "name": "Brigadeiro"
+    },
+    {
+      "id": "brooklin",
+      "lat": -23.617,
+      "lon": -46.679,
+      "lines": [
+        "5"
+      ],
+      "name": "Brooklin"
+    },
+    {
+      "id": "butanta",
+      "lat": -23.57,
+      "lon": -46.715,
+      "lines": [
+        "4"
+      ],
+      "name": "Butantã"
+    },
+    {
+      "id": "caieiras",
+      "lat": -23.364,
+      "lon": -46.742,
+      "lines": [
+        "7"
+      ],
+      "name": "Caieiras"
+    },
+    {
+      "id": "calmon_viana",
+      "lat": -23.536,
+      "lon": -46.299,
+      "lines": [
+        "11",
+        "12"
+      ],
+      "name": "Calmon Viana"
+    },
+    {
+      "id": "camilo_haddad",
+      "lat": -23.553,
+      "lon": -46.523,
+      "lines": [
+        "15"
+      ],
+      "name": "Camilo Haddad"
+    },
+    {
+      "id": "campo_belo",
+      "lat": -23.622,
+      "lon": -46.671,
+      "lines": [
+        "5"
+      ],
+      "name": "Campo Belo"
+    },
+    {
+      "id": "campo_limpo",
+      "lat": -23.643,
+      "lon": -46.754,
+      "lines": [
+        "5"
+      ],
+      "name": "Campo Limpo"
+    },
+    {
+      "id": "campo_limpo_paulista",
+      "lat": -23.208,
+      "lon": -46.772,
+      "lines": [
+        "7"
+      ],
+      "name": "Campo Limpo Paulista"
+    },
+    {
+      "id": "capao_redondo",
+      "lat": -23.65,
+      "lon": -46.764,
+      "lines": [
+        "5"
+      ],
+      "name": "Capão Redondo"
+    },
+    {
+      "id": "capuava",
+      "lat": -23.692,
+      "lon": -46.496,
+      "lines": [
+        "10"
+      ],
+      "name": "Capuava"
+    },
+    {
+      "id": "carandiru",
+      "lat": -23.516,
+      "lon": -46.621,
+      "lines": [
+        "1"
+      ],
+      "name": "Carandiru"
+    },
+    {
+      "id": "carapicuiba",
+      "lat": -23.523,
+      "lon": -46.835,
+      "lines": [
+        "8"
+      ],
+      "name": "Carapicuíba"
+    },
+    {
+      "id": "carrao",
+      "lat": -23.545,
+      "lon": -46.565,
+      "lines": [
+        "3"
+      ],
+      "name": "Carrão"
+    },
+    {
+      "id": "chacara_klabin",
+      "lat": -23.577,
+      "lon": -46.622,
+      "lines": [
+        "2",
+        "5"
+      ],
+      "name": "Chácara Klabin"
+    },
+    {
+      "id": "cidade_jardim",
+      "lat": -23.558,
+      "lon": -46.697,
+      "lines": [
+        "9"
+      ],
+      "name": "Cidade Jardim"
+    },
+    {
+      "id": "cidade_universitaria",
+      "lat": -23.552,
+      "lon": -46.721,
+      "lines": [
+        "9"
+      ],
+      "name": "Cidade Universitária"
+    },
+    {
+      "id": "clinicas",
+      "lat": -23.555,
+      "lon": -46.669,
+      "lines": [
+        "2"
+      ],
+      "name": "Clínicas"
+    },
+    {
+      "id": "comandante_sampaio",
+      "lat": -23.535,
+      "lon": -46.799,
+      "lines": [
+        "8"
+      ],
+      "name": "Comandante Sampaio"
+    },
+    {
+      "id": "comendador_ermelino",
+      "lat": -23.512,
+      "lon": -46.491,
+      "lines": [
+        "12"
+      ],
+      "name": "Comendador Ermelino"
+    },
+    {
+      "id": "conceicao",
+      "lat": -23.636,
+      "lon": -46.642,
+      "lines": [
+        "1"
+      ],
+      "name": "Conceição"
+    },
+    {
+      "id": "consolacao",
+      "lat": -23.557,
+      "lon": -46.658,
+      "lines": [
+        "2"
+      ],
+      "name": "Consolação"
+    },
+    {
+      "id": "corinthians_itaquera",
+      "lat": -23.541,
+      "lon": -46.509,
+      "lines": [
+        "11",
+        "3"
+      ],
+      "name": "Corinthians-Itaquera"
+    },
+    {
+      "id": "dom_bosco",
+      "lat": -23.542,
+      "lon": -46.493,
+      "lines": [
+        "11"
+      ],
+      "name": "Dom Bosco"
+    },
+    {
+      "id": "domingos_de_moraes",
+      "lat": -23.523,
+      "lon": -46.712,
+      "lines": [
+        "8"
+      ],
+      "name": "Domingos de Moraes"
+    },
+    {
+      "id": "engenheiro_cardoso",
+      "lat": -23.541,
+      "lon": -46.923,
+      "lines": [
+        "8"
+      ],
+      "name": "Engenheiro Cardoso"
+    },
+    {
+      "id": "engenheiro_goulart",
+      "lat": -23.528,
+      "lon": -46.536,
+      "lines": [
+        "12",
+        "13"
+      ],
+      "name": "Engenheiro Goulart"
+    },
+    {
+      "id": "engenheiro_manoel_feio",
+      "lat": -23.493,
+      "lon": -46.348,
+      "lines": [
+        "12"
+      ],
+      "name": "Engenheiro Manoel Feio"
+    },
+    {
+      "id": "estudantes",
+      "lat": -23.546,
+      "lon": -46.179,
+      "lines": [
+        "11"
+      ],
+      "name": "Estudantes"
+    },
+    {
+      "id": "eucaliptos",
+      "lat": -23.62,
+      "lon": -46.662,
+      "lines": [
+        "5"
+      ],
+      "name": "Eucaliptos"
+    },
+    {
+      "id": "faria_lima",
+      "lat": -23.578,
+      "lon": -46.697,
+      "lines": [
+        "4"
+      ],
+      "name": "Faria Lima"
+    },
+    {
+      "id": "fazenda_da_japiim",
+      "lat": -23.519,
+      "lon": -46.46,
+      "lines": [
+        "15"
+      ],
+      "name": "Fazenda da Japiim"
+    },
+    {
+      "id": "ferraz_de_vasconcelos",
+      "lat": -23.541,
+      "lon": -46.368,
+      "lines": [
+        "11"
+      ],
+      "name": "Ferraz de Vasconcelos"
+    },
+    {
+      "id": "fradique_coutinho",
+      "lat": -23.572,
+      "lon": -46.687,
+      "lines": [
+        "4"
+      ],
+      "name": "Fradique Coutinho"
+    },
+    {
+      "id": "francisco_morato",
+      "lat": -23.281,
+      "lon": -46.744,
+      "lines": [
+        "7"
+      ],
+      "name": "Francisco Morato"
+    },
+    {
+      "id": "franco_da_rocha",
+      "lat": -23.322,
+      "lon": -46.726,
+      "lines": [
+        "7"
+      ],
+      "name": "Franco da Rocha"
+    },
+    {
+      "id": "general_miguel_costa",
+      "lat": -23.543,
+      "lon": -46.817,
+      "lines": [
+        "8"
+      ],
+      "name": "General Miguel Costa"
+    },
+    {
+      "id": "giovanni_gronchi",
+      "lat": -23.627,
+      "lon": -46.737,
+      "lines": [
+        "5"
+      ],
+      "name": "Giovanni Gronchi"
+    },
+    {
+      "id": "grajau",
+      "lat": -23.714,
+      "lon": -46.684,
+      "lines": [
+        "9"
+      ],
+      "name": "Grajaú"
+    },
+    {
+      "id": "guaianases",
+      "lat": -23.54,
+      "lon": -46.454,
+      "lines": [
+        "11"
+      ],
+      "name": "Guaianases"
+    },
+    {
+      "id": "guapituba",
+      "lat": -23.699,
+      "lon": -46.414,
+      "lines": [
+        "10"
+      ],
+      "name": "Guapituba"
+    },
+    {
+      "id": "guarulhos_cecap",
+      "lat": -23.454,
+      "lon": -46.524,
+      "lines": [
+        "13"
+      ],
+      "name": "Guarulhos-CECAP"
+    },
+    {
+      "id": "guilhermina_esperanca",
+      "lat": -23.536,
+      "lon": -46.538,
+      "lines": [
+        "3"
+      ],
+      "name": "Guilhermina-Esperança"
+    },
+    {
+      "id": "hebraica_reboucas",
+      "lat": -23.563,
+      "lon": -46.692,
+      "lines": [
+        "9"
+      ],
+      "name": "Hebraica-Rebouças"
+    },
+    {
+      "id": "higienopolis_mackenzie",
+      "lat": -23.55,
+      "lon": -46.651,
+      "lines": [
+        "4"
+      ],
+      "name": "Higienópolis-Mackenzie"
+    },
+    {
+      "id": "hospital_sao_paulo",
+      "lat": -23.601,
+      "lon": -46.647,
+      "lines": [
+        "5"
+      ],
+      "name": "Hospital São Paulo"
+    },
+    {
+      "id": "imperatriz_leopoldina",
+      "lat": -23.525,
+      "lon": -46.723,
+      "lines": [
+        "8"
+      ],
+      "name": "Imperatriz Leopoldina"
+    },
+    {
+      "id": "ipiranga",
+      "lat": -23.578,
+      "lon": -46.6,
+      "lines": [
+        "10"
+      ],
+      "name": "Ipiranga"
+    },
+    {
+      "id": "itaim_paulista",
+      "lat": -23.497,
+      "lon": -46.398,
+      "lines": [
+        "12"
+      ],
+      "name": "Itaim Paulista"
+    },
+    {
+      "id": "itapevi",
+      "lat": -23.549,
+      "lon": -46.934,
+      "lines": [
+        "8"
+      ],
+      "name": "Itapevi"
+    },
+    {
+      "id": "itaquaquecetuba",
+      "lat": -23.484,
+      "lon": -46.349,
+      "lines": [
+        "12"
+      ],
+      "name": "Itaquaquecetuba"
+    },
+    {
+      "id": "jabaquara",
+      "lat": -23.646,
+      "lon": -46.639,
+      "lines": [
+        "1"
+      ],
+      "name": "Jabaquara"
+    },
+    {
+      "id": "jandira",
+      "lat": -23.529,
+      "lon": -46.905,
+      "lines": [
+        "8"
+      ],
+      "name": "Jandira"
+    },
+    {
+      "id": "jaragua",
+      "lat": -23.48,
+      "lon": -46.734,
+      "lines": [
+        "7"
+      ],
+      "name": "Jaraguá"
+    },
+    {
+      "id": "jardim_belval",
+      "lat": -23.515,
+      "lon": -46.887,
+      "lines": [
+        "8"
+      ],
+      "name": "Jardim Belval"
+    },
+    {
+      "id": "jardim_helena_vila_mara",
+      "lat": -23.493,
+      "lon": -46.424,
+      "lines": [
+        "12"
+      ],
+      "name": "Jardim Helena-Vila Mara"
+    },
+    {
+      "id": "jardim_planalto",
+      "lat": -23.534,
+      "lon": -46.484,
+      "lines": [
+        "15"
+      ],
+      "name": "Jardim Planalto"
+    },
+    {
+      "id": "jardim_romano",
+      "lat": -23.492,
+      "lon": -46.375,
+      "lines": [
+        "12"
+      ],
+      "name": "Jardim Romano"
+    },
+    {
+      "id": "jardim_sao_paulo_ayrton_senna",
+      "lat": -23.491,
+      "lon": -46.606,
+      "lines": [
+        "1"
+      ],
+      "name": "Jardim São Paulo-Ayrton Senna"
+    },
+    {
+      "id": "jardim_silveira",
+      "lat": -23.514,
+      "lon": -46.9,
+      "lines": [
+        "8"
+      ],
+      "name": "Jardim Silveira"
+    },
+    {
+      "id": "jose_bonifacio",
+      "lat": -23.54,
+      "lon": -46.474,
+      "lines": [
+        "11"
+      ],
+      "name": "José Bonifácio"
+    },
+    {
+      "id": "julio_prestes",
+      "lat": -23.533,
+      "lon": -46.642,
+      "lines": [
+        "8"
+      ],
+      "name": "Júlio Prestes"
+    },
+    {
+      "id": "jundiai",
+      "lat": -23.196,
+      "lon": -46.883,
+      "lines": [
+        "7"
+      ],
+      "name": "Jundiaí"
+    },
+    {
+      "id": "jundiapeba",
+      "lat": -23.552,
+      "lon": -46.263,
+      "lines": [
+        "11"
+      ],
+      "name": "Jundiapeba"
+    },
+    {
+      "id": "jurubatuba",
+      "lat": -23.665,
+      "lon": -46.69,
+      "lines": [
+        "9"
+      ],
+      "name": "Jurubatuba"
+    },
+    {
+      "id": "juventus_mooca",
+      "lat": -23.547,
+      "lon": -46.606,
+      "lines": [
+        "10"
+      ],
+      "name": "Juventus-Mooca"
+    },
+    {
+      "id": "lapa",
+      "lat": -23.522,
+      "lon": -46.702,
+      "lines": [
+        "7",
+        "8"
+      ],
+      "name": "Lapa"
+    },
+    {
+      "id": "largo_treze",
+      "lat": -23.652,
+      "lon": -46.703,
+      "lines": [
+        "5"
+      ],
+      "name": "Largo Treze"
+    },
+    {
+      "id": "liberdade",
+      "lat": -23.558,
+      "lon": -46.636,
+      "lines": [
+        "1"
+      ],
+      "name": "Liberdade"
+    },
+    {
+      "id": "luz",
+      "lat": -23.534,
+      "lon": -46.635,
+      "lines": [
+        "1",
+        "11",
+        "4",
+        "7"
+      ],
+      "name": "Luz"
+    },
+    {
+      "id": "marechal_deodoro",
+      "lat": -23.529,
+      "lon": -46.654,
+      "lines": [
+        "3"
+      ],
+      "name": "Marechal Deodoro"
+    },
+    {
+      "id": "maua",
+      "lat": -23.668,
+      "lon": -46.461,
+      "lines": [
+        "10"
+      ],
+      "name": "Mauá"
+    },
+    {
+      "id": "moema",
+      "lat": -23.61,
+      "lon": -46.658,
+      "lines": [
+        "5"
+      ],
+      "name": "Moema"
+    },
+    {
+      "id": "mogi_das_cruzes",
+      "lat": -23.524,
+      "lon": -46.191,
+      "lines": [
+        "11"
+      ],
+      "name": "Mogi das Cruzes"
+    },
+    {
+      "id": "morumbi",
+      "lat": -23.601,
+      "lon": -46.719,
+      "lines": [
+        "9"
+      ],
+      "name": "Morumbi"
+    },
+    {
+      "id": "oratorio",
+      "lat": -23.574,
+      "lon": -46.553,
+      "lines": [
+        "15"
+      ],
+      "name": "Oratório"
+    },
+    {
+      "id": "osasco",
+      "lat": -23.532,
+      "lon": -46.791,
+      "lines": [
+        "8",
+        "9"
+      ],
+      "name": "Osasco"
+    },
+    {
+      "id": "oscar_freire",
+      "lat": -23.565,
+      "lon": -46.67,
+      "lines": [
+        "4"
+      ],
+      "name": "Oscar Freire"
+    },
+    {
+      "id": "palmeiras_barra_funda",
+      "lat": -23.524,
+      "lon": -46.668,
+      "lines": [
+        "3",
+        "7",
+        "8"
+      ],
+      "name": "Palmeiras-Barra Funda"
+    },
+    {
+      "id": "parada_inglesa",
+      "lat": -23.479,
+      "lon": -46.604,
+      "lines": [
+        "1"
+      ],
+      "name": "Parada Inglesa"
+    },
+    {
+      "id": "paraiso",
+      "lat": -23.574,
+      "lon": -46.642,
+      "lines": [
+        "1",
+        "2"
+      ],
+      "name": "Paraíso"
+    },
+    {
+      "id": "patriarca_vila_re",
+      "lat": -23.532,
+      "lon": -46.528,
+      "lines": [
+        "3"
+      ],
+      "name": "Patriarca-Vila Ré"
+    },
+    {
+      "id": "paulista_pernambucanas",
+      "lat": -23.557,
+      "lon": -46.652,
+      "lines": [
+        "4"
+      ],
+      "name": "Paulista-Pernambucanas"
+    },
+    {
+      "id": "pedro_ii",
+      "lat": -23.55,
+      "lon": -46.629,
+      "lines": [
+        "3"
+      ],
+      "name": "Pedro II"
+    },
+    {
+      "id": "penha",
+      "lat": -23.542,
+      "lon": -46.555,
+      "lines": [
+        "3"
+      ],
+      "name": "Penha"
+    },
+    {
+      "id": "perus",
+      "lat": -23.404,
+      "lon": -46.751,
+      "lines": [
+        "7"
+      ],
+      "name": "Perus"
+    },
+    {
+      "id": "pinheiros",
+      "lat": -23.567,
+      "lon": -46.7,
+      "lines": [
+        "4",
+        "9"
+      ],
+      "name": "Pinheiros"
+    },
+    {
+      "id": "piqueri",
+      "lat": -23.526,
+      "lon": -46.716,
+      "lines": [
+        "7"
+      ],
+      "name": "Piqueri"
+    },
+    {
+      "id": "pirituba",
+      "lat": -23.502,
+      "lon": -46.73,
+      "lines": [
+        "7"
+      ],
+      "name": "Pirituba"
+    },
+    {
+      "id": "poa",
+      "lat": -23.528,
+      "lon": -46.344,
+      "lines": [
+        "11"
+      ],
+      "name": "Poá"
+    },
+    {
+      "id": "portuguesa_tiete",
+      "lat": -23.528,
+      "lon": -46.625,
+      "lines": [
+        "1"
+      ],
+      "name": "Portuguesa-Tietê"
+    },
+    {
+      "id": "praca_da_arvore",
+      "lat": -23.608,
+      "lon": -46.638,
+      "lines": [
+        "1"
+      ],
+      "name": "Praça da Árvore"
+    },
+    {
+      "id": "prefeito_saladino",
+      "lat": -23.643,
+      "lon": -46.563,
+      "lines": [
+        "10"
+      ],
+      "name": "Prefeito Saladino"
+    },
+    {
+      "id": "presidente_altino",
+      "lat": -23.531,
+      "lon": -46.735,
+      "lines": [
+        "8",
+        "9"
+      ],
+      "name": "Presidente Altino"
+    },
+    {
+      "id": "primavera_interlagos",
+      "lat": -23.696,
+      "lon": -46.667,
+      "lines": [
+        "9"
+      ],
+      "name": "Primavera-Interlagos"
+    },
+    {
+      "id": "quitauna",
+      "lat": -23.537,
+      "lon": -46.808,
+      "lines": [
+        "8"
+      ],
+      "name": "Quitaúna"
+    },
+    {
+      "id": "republica",
+      "lat": -23.543,
+      "lon": -46.643,
+      "lines": [
+        "3",
+        "4"
+      ],
+      "name": "República"
+    },
+    {
+      "id": "ribeirao_pires",
+      "lat": -23.711,
+      "lon": -46.413,
+      "lines": [
+        "10"
+      ],
+      "name": "Ribeirão Pires"
+    },
+    {
+      "id": "rio_grande_da_serra",
+      "lat": -23.744,
+      "lon": -46.402,
+      "lines": [
+        "10"
+      ],
+      "name": "Rio Grande da Serra"
+    },
+    {
+      "id": "sacoma",
+      "lat": -23.606,
+      "lon": -46.581,
+      "lines": [
+        "2"
+      ],
+      "name": "Sacomã"
+    },
+    {
+      "id": "sagrado_coracao",
+      "lat": -23.538,
+      "lon": -46.913,
+      "lines": [
+        "8"
+      ],
+      "name": "Sagrado Coração"
+    },
+    {
+      "id": "santa_cecilia",
+      "lat": -23.536,
+      "lon": -46.648,
+      "lines": [
+        "3"
+      ],
+      "name": "Santa Cecília"
+    },
+    {
+      "id": "santa_cruz",
+      "lat": -23.598,
+      "lon": -46.64,
+      "lines": [
+        "1",
+        "5"
+      ],
+      "name": "Santa Cruz"
+    },
+    {
+      "id": "santa_rita",
+      "lat": -23.56,
+      "lon": -46.958,
+      "lines": [
+        "8"
+      ],
+      "name": "Santa Rita"
+    },
+    {
+      "id": "santa_terezinha",
+      "lat": -23.52,
+      "lon": -46.846,
+      "lines": [
+        "8"
+      ],
+      "name": "Santa Terezinha"
+    },
+    {
+      "id": "santana",
+      "lat": -23.504,
+      "lon": -46.613,
+      "lines": [
+        "1"
+      ],
+      "name": "Santana"
+    },
+    {
+      "id": "santo_amaro",
+      "lat": -23.651,
+      "lon": -46.71,
+      "lines": [
+        "5",
+        "9"
+      ],
+      "name": "Santo Amaro"
+    },
+    {
+      "id": "santo_andre",
+      "lat": -23.663,
+      "lon": -46.538,
+      "lines": [
+        "10"
+      ],
+      "name": "Santo André"
+    },
+    {
+      "id": "santos_imigrantes",
+      "lat": -23.597,
+      "lon": -46.613,
+      "lines": [
+        "2"
+      ],
+      "name": "Santos-Imigrantes"
+    },
+    {
+      "id": "sao_bento",
+      "lat": -23.543,
+      "lon": -46.634,
+      "lines": [
+        "1",
+        "3"
+      ],
+      "name": "São Bento"
+    },
+    {
+      "id": "sao_caetano_do_sul",
+      "lat": -23.621,
+      "lon": -46.573,
+      "lines": [
+        "10"
+      ],
+      "name": "São Caetano do Sul"
+    },
+    {
+      "id": "sao_joaquim",
+      "lat": -23.565,
+      "lon": -46.641,
+      "lines": [
+        "1"
+      ],
+      "name": "São Joaquim"
+    },
+    {
+      "id": "sao_judas",
+      "lat": -23.628,
+      "lon": -46.641,
+      "lines": [
+        "1"
+      ],
+      "name": "São Judas"
+    },
+    {
+      "id": "sao_lucas",
+      "lat": -23.563,
+      "lon": -46.538,
+      "lines": [
+        "15"
+      ],
+      "name": "São Lucas"
+    },
+    {
+      "id": "sao_mateus",
+      "lat": -23.51,
+      "lon": -46.446,
+      "lines": [
+        "15"
+      ],
+      "name": "São Mateus"
+    },
+    {
+      "id": "sao_miguel_paulista",
+      "lat": -23.497,
+      "lon": -46.454,
+      "lines": [
+        "12"
+      ],
+      "name": "São Miguel Paulista"
+    },
+    {
+      "id": "sao_paulo_morumbi",
+      "lat": -23.598,
+      "lon": -46.733,
+      "lines": [
+        "4"
+      ],
+      "name": "São Paulo-Morumbi"
+    },
+    {
+      "id": "sapopemba",
+      "lat": -23.526,
+      "lon": -46.472,
+      "lines": [
+        "15"
+      ],
+      "name": "Sapopemba"
+    },
+    {
+      "id": "saude",
+      "lat": -23.619,
+      "lon": -46.639,
+      "lines": [
+        "1"
+      ],
+      "name": "Saúde"
+    },
+    {
+      "id": "se",
+      "lat": -23.55,
+      "lon": -46.633,
+      "lines": [
+        "1",
+        "3"
+      ],
+      "name": "Sé"
+    },
+    {
+      "id": "socorro",
+      "lat": -23.627,
+      "lon": -46.714,
+      "lines": [
+        "9"
+      ],
+      "name": "Socorro"
+    },
+    {
+      "id": "sumare",
+      "lat": -23.559,
+      "lon": -46.678,
+      "lines": [
+        "2"
+      ],
+      "name": "Sumaré"
+    },
+    {
+      "id": "suzano",
+      "lat": -23.542,
+      "lon": -46.312,
+      "lines": [
+        "11"
+      ],
+      "name": "Suzano"
+    },
+    {
+      "id": "tamanduatei",
+      "lat": -23.602,
+      "lon": -46.57,
+      "lines": [
+        "10",
+        "2"
+      ],
+      "name": "Tamanduateí"
+    },
+    {
+      "id": "tatuape",
+      "lat": -23.542,
+      "lon": -46.577,
+      "lines": [
+        "11",
+        "12",
+        "3"
+      ],
+      "name": "Tatuapé"
+    },
+    {
+      "id": "tiradentes",
+      "lat": -23.534,
+      "lon": -46.634,
+      "lines": [
+        "1"
+      ],
+      "name": "Tiradentes"
+    },
+    {
+      "id": "trianon_masp",
+      "lat": -23.56,
+      "lon": -46.653,
+      "lines": [
+        "2"
+      ],
+      "name": "Trianon-Masp"
+    },
+    {
+      "id": "tucuruvi",
+      "lat": -23.466,
+      "lon": -46.601,
+      "lines": [
+        "1"
+      ],
+      "name": "Tucuruvi"
+    },
+    {
+      "id": "usp_leste",
+      "lat": -23.52,
+      "lon": -46.514,
+      "lines": [
+        "12"
+      ],
+      "name": "USP Leste"
+    },
+    {
+      "id": "utinga",
+      "lat": -23.632,
+      "lon": -46.568,
+      "lines": [
+        "10"
+      ],
+      "name": "Utinga"
+    },
+    {
+      "id": "varginha",
+      "lat": -23.74,
+      "lon": -46.696,
+      "lines": [
+        "9"
+      ],
+      "name": "Varginha"
+    },
+    {
+      "id": "varzea_paulista",
+      "lat": -23.209,
+      "lon": -46.823,
+      "lines": [
+        "7"
+      ],
+      "name": "Várzea Paulista"
+    },
+    {
+      "id": "vergueiro",
+      "lat": -23.573,
+      "lon": -46.638,
+      "lines": [
+        "1"
+      ],
+      "name": "Vergueiro"
+    },
+    {
+      "id": "vila_clarice",
+      "lat": -23.491,
+      "lon": -46.728,
+      "lines": [
+        "7"
+      ],
+      "name": "Vila Clarice"
+    },
+    {
+      "id": "vila_das_belezas",
+      "lat": -23.634,
+      "lon": -46.745,
+      "lines": [
+        "5"
+      ],
+      "name": "Vila das Belezas"
+    },
+    {
+      "id": "vila_madalena",
+      "lat": -23.553,
+      "lon": -46.69,
+      "lines": [
+        "2"
+      ],
+      "name": "Vila Madalena"
+    },
+    {
+      "id": "vila_mariana",
+      "lat": -23.589,
+      "lon": -46.644,
+      "lines": [
+        "1"
+      ],
+      "name": "Vila Mariana"
+    },
+    {
+      "id": "vila_matilde",
+      "lat": -23.539,
+      "lon": -46.547,
+      "lines": [
+        "3"
+      ],
+      "name": "Vila Matilde"
+    },
+    {
+      "id": "vila_prudente",
+      "lat": -23.582,
+      "lon": -46.566,
+      "lines": [
+        "15",
+        "2"
+      ],
+      "name": "Vila Prudente"
+    },
+    {
+      "id": "vila_sonia",
+      "lat": -23.61,
+      "lon": -46.74,
+      "lines": [
+        "4"
+      ],
+      "name": "Vila Sônia-Professora Elisabeth Tenreiro"
+    },
+    {
+      "id": "vila_tolstoi",
+      "lat": -23.546,
+      "lon": -46.51,
+      "lines": [
+        "15"
+      ],
+      "name": "Vila Tolstói"
+    },
+    {
+      "id": "vila_uniao",
+      "lat": -23.538,
+      "lon": -46.496,
+      "lines": [
+        "15"
+      ],
+      "name": "Vila União"
+    },
+    {
+      "id": "villa_lobos_jaguare",
+      "lat": -23.552,
+      "lon": -46.708,
+      "lines": [
+        "9"
+      ],
+      "name": "Villa-Lobos-Jaguaré"
+    }
+  ]
+}
