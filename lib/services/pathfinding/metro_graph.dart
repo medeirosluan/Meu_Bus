@@ -49,8 +49,9 @@ class _PriorityQueue {
 }
 
 class MetroGraph {
-  static const transferPenalty = 3;
+  static const transferPenalty = 1000;
   static const minutePerStation = 2;
+  static const displayTransferMinutes = 3;
 
   final Map<String, List<_Edge>> _adjacency = {};
   final Map<String, Station> _stations;
@@ -130,11 +131,11 @@ class MetroGraph {
       }
     }
     if (goal == null) return null;
-    return _reconstruct(goal, prev, edgeOf, dist[goal]!);
+    return _reconstruct(goal, prev, edgeOf);
   }
 
   RoutePlan _reconstruct(String goal, Map<String, String> prev,
-      Map<String, _Edge> edgeOf, int total) {
+      Map<String, _Edge> edgeOf) {
     var nodeIds = <String>[];
     var node = goal;
     while (true) {
@@ -167,9 +168,13 @@ class MetroGraph {
     if (legStart <= k) {
       _closeLeg(legs, nodeIds, legStart, k + 1, curLine);
     }
+    final displayMinutes = legs.isEmpty
+        ? 0
+        : legs.fold(0, (acc, l) => acc + l.minutes) +
+            displayTransferMinutes * (legs.length - 1);
     return RoutePlan(
       legs: legs,
-      totalMinutes: total,
+      totalMinutes: displayMinutes,
       transferStationNames: transfers.toList(),
     );
   }
