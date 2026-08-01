@@ -28,7 +28,6 @@ class _SchedulesPageState extends ConsumerState<SchedulesPage> {
     final station = _station;
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Horários')),
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: ListView(

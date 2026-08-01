@@ -8,6 +8,7 @@ import 'package:seu_metro/models/line_status.dart';
 import 'package:seu_metro/models/station.dart';
 import 'package:seu_metro/providers/navigation.dart';
 import 'package:seu_metro/providers/repositories.dart';
+import 'package:seu_metro/providers/settings_provider.dart';
 import 'package:seu_metro/providers/status_provider.dart';
 import 'package:seu_metro/services/location/nearest_station.dart';
 import 'package:seu_metro/theme/line_colors.dart';
@@ -21,6 +22,7 @@ class StatusPage extends ConsumerStatefulWidget {
 
 class _StatusPageState extends ConsumerState<StatusPage> {
   Timer? _refreshTimer;
+  int? _refreshMinutes;
   bool _locating = false;
   bool _gpsDenied = false;
   bool _gpsError = false;
@@ -30,9 +32,16 @@ class _StatusPageState extends ConsumerState<StatusPage> {
   @override
   void initState() {
     super.initState();
-    _refreshTimer = Timer.periodic(const Duration(minutes: 5), (_) {
-      ref.invalidate(statusProvider);
-    });
+    _refreshMinutes = ref.read(settingsProvider).refreshIntervalMinutes;
+    _startTimer();
+  }
+
+  void _startTimer() {
+    _refreshTimer?.cancel();
+    _refreshTimer = Timer.periodic(
+      Duration(minutes: _refreshMinutes ?? 5),
+      (_) => ref.invalidate(statusProvider),
+    );
   }
 
   @override
@@ -132,8 +141,13 @@ class _StatusPageState extends ConsumerState<StatusPage> {
   Widget build(BuildContext context) {
     final statusAsync = ref.watch(statusProvider);
     final linesAsync = ref.watch(linesProvider);
+    ref.listen(settingsProvider, (prev, next) {
+      if (next.refreshIntervalMinutes != _refreshMinutes) {
+        _refreshMinutes = next.refreshIntervalMinutes;
+        _startTimer();
+      }
+    });
     return Scaffold(
-      appBar: AppBar(title: const Text('Status ao vivo')),
       body: RefreshIndicator(
         onRefresh: _refresh,
         child: ListView(

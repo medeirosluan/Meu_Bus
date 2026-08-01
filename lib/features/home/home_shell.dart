@@ -6,6 +6,7 @@ import '../favorites/favorites_page.dart';
 import '../history/history_page.dart';
 import '../routes/routes_page.dart';
 import '../schedules/schedules_page.dart';
+import '../settings/app_settings_drawer.dart';
 import '../status/status_page.dart';
 
 class HomeShell extends ConsumerStatefulWidget {
@@ -24,10 +25,51 @@ class _HomeShellState extends ConsumerState<HomeShell> {
     HistoryPage(),
   ];
 
+  static const _tabNames = ['Rotas', 'Status', 'Horários', 'Favoritos', 'Histórico'];
+
   @override
   Widget build(BuildContext context) {
     final index = ref.watch(selectedTabProvider);
     return Scaffold(
+      appBar: AppBar(
+        leading: Builder(
+          builder: (context) => IconButton(
+            icon: const Icon(Icons.menu),
+            tooltip: 'Abrir menu',
+            onPressed: () => Scaffold.of(context).openDrawer(),
+          ),
+        ),
+        title: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Container(
+                  width: 26,
+                  height: 26,
+                  decoration: const BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Color(0xFF00378C),
+                  ),
+                  child: const Icon(Icons.directions_subway,
+                      color: Colors.white, size: 16),
+                ),
+                const SizedBox(width: 8),
+                const Text('Seu Metrô'),
+              ],
+            ),
+            Text(
+              _tabNames[index],
+              style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                    color: Theme.of(context).colorScheme.onSurfaceVariant,
+                  ),
+            ),
+          ],
+        ),
+      ),
+      drawer: const AppSettingsDrawer(),
       body: IndexedStack(index: index, children: _pages),
       bottomNavigationBar: NavigationBar(
         selectedIndex: index,

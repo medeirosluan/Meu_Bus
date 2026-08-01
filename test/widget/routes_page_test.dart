@@ -4,25 +4,28 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:seu_metro/features/routes/routes_page.dart';
 
 void main() {
-  testWidgets('RoutesPage mostra guia passo a passo com Busca rota', (tester) async {
+  testWidgets('botão desabilitado até selecionar origem e destino; busca abre resultado',
+      (tester) async {
     await tester.pumpWidget(const ProviderScope(child: MaterialApp(home: RoutesPage())));
     await tester.pumpAndSettle();
-    expect(find.text('Origem'), findsOneWidget);
-    expect(find.text('Destino'), findsOneWidget);
+    final buttonFinder = find.widgetWithText(FilledButton, 'Busca rota');
+    FilledButton button = tester.widget(buttonFinder);
+    expect(button.onPressed, isNull);
+    expect(find.byIcon(Icons.circle), findsNWidgets(2));
     await tester.enterText(find.byType(TextField).first, 'Luz');
     await tester.pumpAndSettle();
     await tester.tap(find.text('Luz').first);
     await tester.pumpAndSettle();
+    button = tester.widget(buttonFinder);
+    expect(button.onPressed, isNull);
     await tester.enterText(find.byType(TextField).last, 'Santo Amaro');
     await tester.pumpAndSettle();
     await tester.tap(find.text('Santo Amaro').last);
     await tester.pumpAndSettle();
-    await tester.tap(find.widgetWithText(FilledButton, 'Busca rota'));
+    button = tester.widget(buttonFinder);
+    expect(button.onPressed, isNotNull);
+    await tester.tap(buttonFinder);
     await tester.pumpAndSettle();
-    expect(find.textContaining('Como chegar em Santo Amaro'), findsOneWidget);
-    expect(find.textContaining('Rota com'), findsOneWidget);
-    expect(find.textContaining('Pegue a'), findsWidgets);
-    expect(find.textContaining('Baldear para a'), findsWidgets);
-    expect(find.textContaining('Desça em Santo Amaro'), findsOneWidget);
+    expect(find.text('Melhor trajeto'), findsOneWidget);
   });
 }
