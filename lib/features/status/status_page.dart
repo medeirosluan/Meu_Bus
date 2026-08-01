@@ -190,38 +190,69 @@ class _StatusPageState extends ConsumerState<StatusPage> {
   }
 
   Widget _statusTile(LineStatus status, Map<String, Line>? lines) {
-    final color = _statusColor(status.statusColor);
+    final lineColor = Color(LineColors.colorFor(status.lineId));
+    final statusColor = _statusColor(status.statusColor);
+    final chipTextColor =
+        ThemeData.estimateBrightnessForColor(statusColor) == Brightness.dark
+            ? Colors.white
+            : Colors.black87;
     return Card(
-      margin: const EdgeInsets.only(bottom: 8),
-      child: ListTile(
-        leading: Container(
-          width: 6,
-          height: 36,
-          decoration: BoxDecoration(
-            color: Color(LineColors.colorFor(status.lineId)),
-            borderRadius: BorderRadius.circular(3),
-          ),
-        ),
-        title: Text(_lineName(status.lineId, lines)),
-        subtitle: status.description == null ? null : Text(status.description!),
-        trailing: Container(
-          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-          decoration: BoxDecoration(
-            color: color,
-            borderRadius: BorderRadius.circular(12),
-          ),
-          child: Text(
-            status.statusLabel,
-            style: TextStyle(
-              color: ThemeData.estimateBrightnessForColor(color) ==
-                      Brightness.dark
-                  ? Colors.white
-                  : Colors.black87,
-              fontSize: 12,
-              fontWeight: FontWeight.w600,
+      margin: const EdgeInsets.only(bottom: 12),
+      clipBehavior: Clip.antiAlias,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Container(
+            color: lineColor,
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+            child: Row(
+              children: [
+                Expanded(
+                  child: Text(
+                    _lineName(status.lineId, lines),
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 15,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                ),
+                Text(
+                  'Linha ${status.lineId}',
+                  style: const TextStyle(color: Colors.white70, fontSize: 12),
+                ),
+              ],
             ),
           ),
-        ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  _updatedLabel(status.updatedAt),
+                  style: Theme.of(context).textTheme.bodySmall,
+                ),
+                Container(
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: 10, vertical: 4),
+                  decoration: BoxDecoration(
+                    color: statusColor,
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: Text(
+                    status.statusLabel,
+                    style: TextStyle(
+                      color: chipTextColor,
+                      fontSize: 12,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }
