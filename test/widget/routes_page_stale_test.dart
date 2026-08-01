@@ -19,6 +19,6 @@ void main() {
     await tester.pumpAndSettle();
     await tester.tap(find.widgetWithText(FilledButton, 'Busca rota'));
     await tester.pumpAndSettle();
-    expect(find.textContaining('min no total'), findsNothing);
+    expect(find.textContaining('Como chegar'), findsNothing);
   });
 }
