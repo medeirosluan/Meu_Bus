@@ -17,7 +17,7 @@ void main() {
     await tester.pumpAndSettle();
     await tester.enterText(find.byType(TextField).first, 'Luz Norte');
     await tester.pumpAndSettle();
-    await tester.tap(find.widgetWithText(FilledButton, 'Calcular rota'));
+    await tester.tap(find.widgetWithText(FilledButton, 'Busca rota'));
     await tester.pumpAndSettle();
     expect(find.textContaining('min no total'), findsNothing);
   });
