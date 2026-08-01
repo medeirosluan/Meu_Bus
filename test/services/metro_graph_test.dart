@@ -60,6 +60,14 @@ void main() {
     expect(graph.plan('sozinho', 'tucuruvi'), isNull);
   });
 
+  test('directionTerminal aponta para o terminal no sentido da viagem', () {
+    final graph = MetroGraph.build([line1, line2], stations);
+    final plan = graph.plan('tucuruvi', 'liberdade')!;
+    expect(plan.legs.first.directionTerminal, 'liberdade');
+    final reverse = graph.plan('liberdade', 'tucuruvi')!;
+    expect(reverse.legs.first.directionTerminal, 'tucuruvi');
+  });
+
   test('integração: rota luz->santo_amaro passa por baldeação', () {
     final rawLines = File('assets/data/lines.json').readAsStringSync();
     final rawStations = File('assets/data/stations.json').readAsStringSync();
@@ -71,5 +79,17 @@ void main() {
     final plan = graph.plan('luz', 'santo_amaro');
     expect(plan, isNotNull);
     expect(plan!.totalMinutes, greaterThan(0));
+  });
+
+  test('integração: sentido tucuruvi->jabaquara aponta para Jabaquara', () {
+    final rawLines = File('assets/data/lines.json').readAsStringSync();
+    final rawStations = File('assets/data/stations.json').readAsStringSync();
+    final lines = (jsonDecode(rawLines)['lines'] as List)
+        .map((e) => Line.fromJson(e as Map<String, dynamic>)).toList();
+    final stations = (jsonDecode(rawStations)['stations'] as List)
+        .map((e) => Station.fromJson(e as Map<String, dynamic>)).toList();
+    final graph = MetroGraph.build(lines, stations);
+    final plan = graph.plan('tucuruvi', 'jabaquara')!;
+    expect(plan.legs.first.directionTerminal, 'Jabaquara');
   });
 }

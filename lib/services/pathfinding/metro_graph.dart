@@ -179,9 +179,10 @@ class MetroGraph {
     final line = _lines[lineId]!;
     final from = _stations[nodeIds[start].split('|').first]!;
     final to = _stations[nodeIds[end - 1].split('|').first]!;
-    final direction = line.terminalA == to.name || line.terminalA == from.name
-        ? line.terminalB
-        : line.terminalA;
+    final fromIdx = line.stationIds.indexOf(from.id);
+    final toIdx = line.stationIds.indexOf(to.id);
+    final dirId = toIdx > fromIdx ? line.stationIds.last : line.stationIds.first;
+    final direction = _stations[dirId]!.name;
     legs.add(RouteLeg(
       lineId: lineId,
       directionTerminal: direction,
