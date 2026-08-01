@@ -8,7 +8,10 @@ import 'package:seu_metro/providers/status_provider.dart';
 void main() {
   testWidgets('StatusPage mostra cartões com bloco de cor e chip', (tester) async {
     final snapshot = StatusSnapshot(
-      data: [LineStatus(lineId: '1', statusCode: 'OperacaoNormal', statusLabel: 'Operação Normal', statusColor: 'verde', description: null, updatedAt: DateTime.now())],
+      data: [
+        LineStatus(lineId: '1', statusCode: 'OperacaoNormal', statusLabel: 'Operação Normal', statusColor: 'verde', description: null, updatedAt: DateTime.now()),
+        LineStatus(lineId: '2', statusCode: 'OperacaoReduzida', statusLabel: 'Operação Reduzida', statusColor: 'amarelo', description: 'Trens circulando com intervalos maiores', updatedAt: DateTime.now()),
+      ],
       updatedAt: DateTime.now(),
       isStale: false,
     );
@@ -17,6 +20,7 @@ void main() {
     await tester.pumpAndSettle();
     expect(find.textContaining('Operação Normal'), findsWidgets);
     expect(find.text('Linha 1'), findsOneWidget);
+    expect(find.textContaining('Trens circulando'), findsWidgets);
     expect(find.textContaining('atualizado'), findsWidgets);
   });
 }

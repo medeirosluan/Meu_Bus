@@ -16,6 +16,9 @@ class _HistoryPageState extends ConsumerState<HistoryPage> {
   int _ano = DateTime.now().year;
   ({int linha, int ano})? _query;
 
+  List<int> get _lineIds =>
+      (LineColors.official.keys.map(int.parse).toList()..sort());
+
   @override
   Widget build(BuildContext context) {
     final tokenConfigured = ref.watch(diretoTokenConfiguredProvider);
@@ -34,8 +37,8 @@ class _HistoryPageState extends ConsumerState<HistoryPage> {
                   initialValue: _linha,
                   decoration: const InputDecoration(labelText: 'Linha'),
                   items: [
-                    for (var i = 1; i <= 15; i++)
-                      DropdownMenuItem(value: i, child: Text('Linha $i')),
+                    for (final id in _lineIds)
+                      DropdownMenuItem(value: id, child: Text('Linha $id')),
                   ],
                   onChanged: (v) => setState(() {
                     _linha = v ?? 1;

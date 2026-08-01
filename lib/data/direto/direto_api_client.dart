@@ -42,10 +42,18 @@ class DiretoApiClient {
   Future<List<int>> getLineStatusIds(int linha, {int? ano}) async {
     final path =
         ano == null ? '/status/codigo/$linha' : '/status/codigo/$linha/$ano';
-    final data = _expectList(await _get(path));
-    return data
-        .map((e) => (e as Map<String, dynamic>)['id'] as int)
-        .toList();
+    return parseStatusIds(_expectList(await _get(path)));
+  }
+
+  static List<int> parseStatusIds(List<dynamic> data) {
+    final ids = <int>[];
+    for (final entry in data) {
+      if (entry is! Map<String, dynamic> || entry['id'] is! num) {
+        throw const FormatException('Resposta inesperada da API Direto dos Trens');
+      }
+      ids.add((entry['id'] as num).toInt());
+    }
+    return ids;
   }
 
   Future<DiretoStatus> getStatusById(int id) async {

@@ -252,6 +252,15 @@ class _StatusPageState extends ConsumerState<StatusPage> {
               ],
             ),
           ),
+          if (status.description != null && status.description!.isNotEmpty) ...[
+            Padding(
+              padding: const EdgeInsets.fromLTRB(16, 0, 16, 12),
+              child: Text(
+                status.description!,
+                style: Theme.of(context).textTheme.bodySmall,
+              ),
+            ),
+          ],
         ],
       ),
     );
