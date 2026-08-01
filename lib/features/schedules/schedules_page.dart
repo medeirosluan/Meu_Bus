@@ -9,7 +9,9 @@ import 'package:seu_metro/theme/line_colors.dart';
 import '../routes/station_picker.dart';
 
 class SchedulesPage extends ConsumerStatefulWidget {
-  const SchedulesPage({super.key});
+  const SchedulesPage({super.key, this.clock = DateTime.now});
+
+  final DateTime Function() clock;
 
   @override
   ConsumerState<SchedulesPage> createState() => _SchedulesPageState();
@@ -59,7 +61,7 @@ class _SchedulesPageState extends ConsumerState<SchedulesPage> {
     final forLine = schedules.where((s) => s.lineId == lineId).toList()
       ..sort((a, b) => a.direction.compareTo(b.direction));
     if (forLine.isEmpty) return const [];
-    final now = DateTime.now();
+    final now = widget.clock();
     return [
       const SizedBox(height: 8),
       Card(
