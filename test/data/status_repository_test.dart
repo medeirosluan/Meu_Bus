@@ -27,7 +27,7 @@ void main() {
 
   test('erro usa cache antigo', () async {
     final fake = _FakeClient();
-    final repo = StatusRepository(client: fake);
+    final repo = StatusRepository(client: fake, cacheDuration: const Duration(milliseconds: 1));
     await repo.getStatuses();
     fake.failNext = true;
     final result = await repo.getStatuses();
