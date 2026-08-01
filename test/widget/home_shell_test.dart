@@ -6,7 +6,7 @@ import 'package:seu_metro/models/line_status.dart';
 import 'package:seu_metro/providers/status_provider.dart';
 
 void main() {
-  testWidgets('HomeShell mostra 5 destinos de navegação', (tester) async {
+  testWidgets('HomeShell mostra 4 destinos e abre em Rotas', (tester) async {
     final snapshot = StatusSnapshot(
       data: [LineStatus(lineId: '1', statusCode: 'OperacaoNormal', statusLabel: 'Operação Normal', statusColor: 'verde', description: null, updatedAt: DateTime.now())],
       updatedAt: DateTime.now(),
@@ -17,10 +17,11 @@ void main() {
     await tester.pumpAndSettle();
     expect(find.byType(NavigationBar), findsOneWidget);
     final navBar = find.byType(NavigationBar);
-    expect(find.descendant(of: navBar, matching: find.text('Mapa')), findsOneWidget);
     expect(find.descendant(of: navBar, matching: find.text('Rotas')), findsOneWidget);
     expect(find.descendant(of: navBar, matching: find.text('Status')), findsOneWidget);
     expect(find.descendant(of: navBar, matching: find.text('Horários')), findsOneWidget);
     expect(find.descendant(of: navBar, matching: find.text('Favoritos')), findsOneWidget);
+    expect(find.descendant(of: navBar, matching: find.text('Mapa')), findsNothing);
+    expect(find.text('Origem'), findsOneWidget);
   });
 }
