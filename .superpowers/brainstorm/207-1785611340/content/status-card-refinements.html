@@ -1,0 +1,112 @@
+<h2>Refinando o "Azul Metrô" — tela de Status</h2>
+<p class="subtitle">Mantemos o Material 3 azul. Qual layout de lista de linhas você prefere? (Todas em claro; o tema escuro segue o mesmo padrão.)</p>
+
+<div class="options">
+  <div class="option" data-choice="a1" onclick="toggleSelect(this)">
+    <div class="letter">1</div>
+    <div class="content">
+      <h3>Cartões com chip de status</h3>
+      <p>Cards arredondados, elevação suave, chip de status colorido (verde/amarelo/vermelho). É o formato atual, com espaçamento e cantos refinados.</p>
+    </div>
+  </div>
+  <div class="option" data-choice="a2" onclick="toggleSelect(this)">
+    <div class="letter">2</div>
+    <div class="content">
+      <h3>Linhas com barra de cor à esquerda</h3>
+      <p>Lista mais compacta: cada linha vira uma faixa com a barra grossa da cor da linha na esquerda, nome, e chip de status à direita. Menos "card", mais listagem limpa.</p>
+    </div>
+  </div>
+  <div class="option" data-choice="a3" onclick="toggleSelect(this)">
+    <div class="letter">3</div>
+    <div class="content">
+      <h3>Cartão com bloco de cor destacado</h3>
+      <p>Card maior onde a cor da linha vira um bloco superior (faixa colorida com o número da linha) e o conteúdo embaixo. Mais "cartão de metrô", visual marcante.</p>
+    </div>
+  </div>
+</div>
+
+<div class="split">
+  <div class="mockup">
+    <div class="mockup-header">1 — Cartões com chip</div>
+    <div class="mockup-body" style="background:#f6f7fb; border-radius:16px; padding:14px; font-family:system-ui; width:230px; margin:0 auto;">
+      <div style="background:#00378C; color:#fff; border-radius:10px; padding:10px 12px; font-weight:700; font-size:13px;">Status</div>
+      <div style="margin-top:10px; background:#fff; border-radius:12px; padding:10px; box-shadow:0 1px 3px rgba(0,0,0,.06);">
+        <div style="display:flex; align-items:center; gap:8px;">
+          <span style="background:#00378C; color:#fff; font-size:11px; font-weight:700; width:22px; height:22px; border-radius:50%; display:flex; align-items:center; justify-content:center;">1</span>
+          <span style="font-size:12px; font-weight:600;">Linha 1 - Azul</span>
+          <span style="margin-left:auto; background:#e6f4ea; color:#1e8e3e; font-size:9px; padding:3px 8px; border-radius:20px;">Operação Normal</span>
+        </div>
+      </div>
+      <div style="margin-top:8px; background:#fff; border-radius:12px; padding:10px; box-shadow:0 1px 3px rgba(0,0,0,.06);">
+        <div style="display:flex; align-items:center; gap:8px;">
+          <span style="background:#186D55; color:#fff; font-size:11px; font-weight:700; width:22px; height:22px; border-radius:50%; display:flex; align-items:center; justify-content:center;">2</span>
+          <span style="font-size:12px; font-weight:600;">Linha 2 - Verde</span>
+          <span style="margin-left:auto; background:#fef3e0; color:#b26a00; font-size:9px; padding:3px 8px; border-radius:20px;">Operação Reduzida</span>
+        </div>
+      </div>
+      <div style="margin-top:8px; background:#fff; border-radius:12px; padding:10px; box-shadow:0 1px 3px rgba(0,0,0,.06);">
+        <div style="display:flex; align-items:center; gap:8px;">
+          <span style="background:#F51200; color:#fff; font-size:11px; font-weight:700; width:22px; height:22px; border-radius:50%; display:flex; align-items:center; justify-content:center;">3</span>
+          <span style="font-size:12px; font-weight:600;">Linha 3 - Vermelha</span>
+          <span style="margin-left:auto; background:#fde8e8; color:#d93025; font-size:9px; padding:3px 8px; border-radius:20px;">Operação Parada</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mockup">
+    <div class="mockup-header">2 — Barra de cor à esquerda</div>
+    <div class="mockup-body" style="background:#f6f7fb; border-radius:16px; padding:14px; font-family:system-ui; width:230px; margin:0 auto;">
+      <div style="background:#00378C; color:#fff; border-radius:10px; padding:10px 12px; font-weight:700; font-size:13px;">Status</div>
+      <div style="margin-top:10px; background:#fff; border-radius:10px; overflow:hidden; box-shadow:0 1px 3px rgba(0,0,0,.06);">
+        <div style="display:flex; align-items:center;">
+          <span style="width:6px; align-self:stretch; background:#00378C;"></span>
+          <span style="flex:1; padding:12px 12px; font-size:12px; font-weight:600;">Linha 1 - Azul</span>
+          <span style="margin-right:10px; background:#e6f4ea; color:#1e8e3e; font-size:9px; padding:3px 8px; border-radius:20px;">Normal</span>
+        </div>
+      </div>
+      <div style="margin-top:8px; background:#fff; border-radius:10px; overflow:hidden; box-shadow:0 1px 3px rgba(0,0,0,.06);">
+        <div style="display:flex; align-items:center;">
+          <span style="width:6px; align-self:stretch; background:#186D55;"></span>
+          <span style="flex:1; padding:12px 12px; font-size:12px; font-weight:600;">Linha 2 - Verde</span>
+          <span style="margin-right:10px; background:#fef3e0; color:#b26a00; font-size:9px; padding:3px 8px; border-radius:20px;">Reduzida</span>
+        </div>
+      </div>
+      <div style="margin-top:8px; background:#fff; border-radius:10px; overflow:hidden; box-shadow:0 1px 3px rgba(0,0,0,.06);">
+        <div style="display:flex; align-items:center;">
+          <span style="width:6px; align-self:stretch; background:#F51200;"></span>
+          <span style="flex:1; padding:12px 12px; font-size:12px; font-weight:600;">Linha 3 - Vermelha</span>
+          <span style="margin-right:10px; background:#fde8e8; color:#d93025; font-size:9px; padding:3px 8px; border-radius:20px;">Parada</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mockup">
+    <div class="mockup-header">3 — Bloco de cor no topo</div>
+    <div class="mockup-body" style="background:#f6f7fb; border-radius:16px; padding:14px; font-family:system-ui; width:230px; margin:0 auto;">
+      <div style="background:#00378C; color:#fff; border-radius:10px; padding:10px 12px; font-weight:700; font-size:13px;">Status</div>
+      <div style="margin-top:10px; background:#fff; border-radius:12px; overflow:hidden; box-shadow:0 1px 3px rgba(0,0,0,.08);">
+        <div style="background:#00378C; color:#fff; padding:8px 12px; font-size:11px; font-weight:700;">Linha 1 - Azul</div>
+        <div style="padding:10px 12px; display:flex; justify-content:space-between; align-items:center;">
+          <span style="font-size:10px; color:#666;">atualizado há 2 min</span>
+          <span style="background:#e6f4ea; color:#1e8e3e; font-size:9px; padding:3px 8px; border-radius:20px;">Operação Normal</span>
+        </div>
+      </div>
+      <div style="margin-top:8px; background:#fff; border-radius:12px; overflow:hidden; box-shadow:0 1px 3px rgba(0,0,0,.08);">
+        <div style="background:#186D55; color:#fff; padding:8px 12px; font-size:11px; font-weight:700;">Linha 2 - Verde</div>
+        <div style="padding:10px 12px; display:flex; justify-content:space-between; align-items:center;">
+          <span style="font-size:10px; color:#666;">atualizado há 2 min</span>
+          <span style="background:#fef3e0; color:#b26a00; font-size:9px; padding:3px 8px; border-radius:20px;">Operação Reduzida</span>
+        </div>
+      </div>
+      <div style="margin-top:8px; background:#fff; border-radius:12px; overflow:hidden; box-shadow:0 1px 3px rgba(0,0,0,.08);">
+        <div style="background:#F51200; color:#fff; padding:8px 12px; font-size:11px; font-weight:700;">Linha 3 - Vermelha</div>
+        <div style="padding:10px 12px; display:flex; justify-content:space-between; align-items:center;">
+          <span style="font-size:10px; color:#666;">atualizado há 2 min</span>
+          <span style="background:#fde8e8; color:#d93025; font-size:9px; padding:3px 8px; border-radius:20px;">Operação Parada</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
