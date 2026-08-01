@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:seu_metro/providers/navigation.dart';
 
 import '../favorites/favorites_page.dart';
+import '../history/history_page.dart';
 import '../routes/routes_page.dart';
 import '../schedules/schedules_page.dart';
 import '../status/status_page.dart';
@@ -20,6 +21,7 @@ class _HomeShellState extends ConsumerState<HomeShell> {
     StatusPage(),
     SchedulesPage(),
     FavoritesPage(),
+    HistoryPage(),
   ];
 
   @override
@@ -62,6 +64,11 @@ class _HomeShellState extends ConsumerState<HomeShell> {
             icon: Icon(Icons.star_outline, color: Colors.white70),
             selectedIcon: Icon(Icons.star, color: Colors.white),
             label: 'Favoritos',
+          ),
+          NavigationDestination(
+            icon: Icon(Icons.history, color: Colors.white70),
+            selectedIcon: Icon(Icons.history, color: Colors.white),
+            label: 'Histórico',
           ),
         ],
       ),
