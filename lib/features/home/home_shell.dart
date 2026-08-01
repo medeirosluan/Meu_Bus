@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:seu_metro/providers/navigation.dart';
 
 import '../favorites/favorites_page.dart';
 import '../map/map_page.dart';
@@ -6,16 +8,14 @@ import '../routes/routes_page.dart';
 import '../schedules/schedules_page.dart';
 import '../status/status_page.dart';
 
-class HomeShell extends StatefulWidget {
+class HomeShell extends ConsumerStatefulWidget {
   const HomeShell({super.key});
 
   @override
-  State<HomeShell> createState() => _HomeShellState();
+  ConsumerState<HomeShell> createState() => _HomeShellState();
 }
 
-class _HomeShellState extends State<HomeShell> {
-  int _index = 0;
-
+class _HomeShellState extends ConsumerState<HomeShell> {
   static const _pages = [
     MapPage(),
     RoutesPage(),
@@ -26,11 +26,13 @@ class _HomeShellState extends State<HomeShell> {
 
   @override
   Widget build(BuildContext context) {
+    final index = ref.watch(selectedTabProvider);
     return Scaffold(
-      body: IndexedStack(index: _index, children: _pages),
+      body: IndexedStack(index: index, children: _pages),
       bottomNavigationBar: NavigationBar(
-        selectedIndex: _index,
-        onDestinationSelected: (i) => setState(() => _index = i),
+        selectedIndex: index,
+        onDestinationSelected: (i) =>
+            ref.read(selectedTabProvider.notifier).state = i,
         destinations: const [
           NavigationDestination(icon: Icon(Icons.map_outlined), label: 'Mapa'),
           NavigationDestination(icon: Icon(Icons.route_outlined), label: 'Rotas'),
