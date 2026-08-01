@@ -1,3 +1,10 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-final selectedTabProvider = StateProvider<int>((ref) => 0);
+class Tabs {
+  static const routes = 0;
+  static const status = 1;
+  static const schedules = 2;
+  static const favorites = 3;
+}
+
+final selectedTabProvider = StateProvider<int>((ref) => Tabs.routes);

@@ -3,7 +3,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:seu_metro/providers/navigation.dart';
 
 import '../favorites/favorites_page.dart';
-import '../map/map_page.dart';
 import '../routes/routes_page.dart';
 import '../schedules/schedules_page.dart';
 import '../status/status_page.dart';
@@ -17,7 +16,6 @@ class HomeShell extends ConsumerStatefulWidget {
 
 class _HomeShellState extends ConsumerState<HomeShell> {
   static const _pages = [
-    MapPage(),
     RoutesPage(),
     StatusPage(),
     SchedulesPage(),
@@ -34,7 +32,6 @@ class _HomeShellState extends ConsumerState<HomeShell> {
         onDestinationSelected: (i) =>
             ref.read(selectedTabProvider.notifier).state = i,
         destinations: const [
-          NavigationDestination(icon: Icon(Icons.map_outlined), label: 'Mapa'),
           NavigationDestination(icon: Icon(Icons.route_outlined), label: 'Rotas'),
           NavigationDestination(icon: Icon(Icons.sensors_outlined), label: 'Status'),
           NavigationDestination(icon: Icon(Icons.schedule_outlined), label: 'Horários'),

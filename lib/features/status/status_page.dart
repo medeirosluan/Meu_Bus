@@ -20,8 +20,6 @@ class StatusPage extends ConsumerStatefulWidget {
 }
 
 class _StatusPageState extends ConsumerState<StatusPage> {
-  static const _routesTab = 1;
-
   Timer? _refreshTimer;
   bool _locating = false;
   bool _gpsDenied = false;
@@ -279,7 +277,7 @@ class _StatusPageState extends ConsumerState<StatusPage> {
                       final nearest = _nearest;
                       if (nearest == null) return;
                       ref.read(selectedRouteOriginProvider.notifier).state = nearest;
-                      ref.read(selectedTabProvider.notifier).state = _routesTab;
+                      ref.read(selectedTabProvider.notifier).state = Tabs.routes;
                     },
                     child: const Text('Como chegar'),
                   ),

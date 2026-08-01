@@ -8,9 +8,6 @@ import 'package:seu_metro/theme/line_colors.dart';
 class FavoritesPage extends ConsumerWidget {
   const FavoritesPage({super.key});
 
-  static const _mapTab = 0;
-  static const _routesTab = 1;
-
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final favoriteIds = ref.watch(favoritesProvider);
@@ -35,10 +32,11 @@ class FavoritesPage extends ConsumerWidget {
               station: favorites[index],
               onToggle: () =>
                   ref.read(favoritesProvider.notifier).toggle(favorites[index].id),
-              onShowOnMap: () =>
-                  ref.read(selectedTabProvider.notifier).state = _mapTab,
-              onGetDirections: () =>
-                  ref.read(selectedTabProvider.notifier).state = _routesTab,
+              onGetDirections: () {
+                ref.read(selectedRouteOriginProvider.notifier).state =
+                    favorites[index];
+                ref.read(selectedTabProvider.notifier).state = Tabs.routes;
+              },
             ),
           );
         },
@@ -51,13 +49,11 @@ class _FavoriteCard extends StatelessWidget {
   const _FavoriteCard({
     required this.station,
     required this.onToggle,
-    required this.onShowOnMap,
     required this.onGetDirections,
   });
 
   final Station station;
   final VoidCallback onToggle;
-  final VoidCallback onShowOnMap;
   final VoidCallback onGetDirections;
 
   @override
@@ -106,18 +102,12 @@ class _FavoriteCard extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 8),
-            Row(
-              children: [
-                OutlinedButton(
-                  onPressed: onShowOnMap,
-                  child: const Text('Ver no mapa'),
-                ),
-                const SizedBox(width: 8),
-                OutlinedButton(
-                  onPressed: onGetDirections,
-                  child: const Text('Como chegar'),
-                ),
-              ],
+            Align(
+              alignment: Alignment.centerLeft,
+              child: OutlinedButton(
+                onPressed: onGetDirections,
+                child: const Text('Como chegar'),
+              ),
             ),
           ],
         ),
