@@ -24,17 +24,9 @@ final statusProvider = FutureProvider<StatusSnapshot>((ref) async {
     return StatusSnapshot(
       data: data,
       updatedAt: repo.lastFetched ?? DateTime.now(),
-      isStale: false,
+      isStale: repo.isStale,
     );
   } catch (_) {
-    final cached = repo.cache;
-    if (cached != null) {
-      return StatusSnapshot(
-        data: cached,
-        updatedAt: repo.lastFetched ?? DateTime.now(),
-        isStale: true,
-      );
-    }
     rethrow;
   }
 });

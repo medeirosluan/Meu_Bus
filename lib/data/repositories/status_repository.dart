@@ -6,11 +6,13 @@ class StatusRepository {
   final Duration cacheDuration;
   List<LineStatus>? _cache;
   DateTime? _lastFetched;
+  bool _isStale = false;
 
   StatusRepository({required this.client, this.cacheDuration = const Duration(minutes: 5)});
 
   List<LineStatus>? get cache => _cache;
   DateTime? get lastFetched => _lastFetched;
+  bool get isStale => _isStale;
 
   Future<List<LineStatus>> getStatuses() async {
     final cache = _cache;
@@ -22,9 +24,13 @@ class StatusRepository {
       final fresh = await client.fetchLines();
       _cache = fresh;
       _lastFetched = DateTime.now();
+      _isStale = false;
       return fresh;
     } catch (_) {
-      if (cache != null) return cache;
+      if (cache != null) {
+        _isStale = true;
+        return cache;
+      }
       rethrow;
     }
   }

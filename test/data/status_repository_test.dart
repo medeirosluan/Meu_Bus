@@ -39,4 +39,18 @@ void main() {
     final repo = StatusRepository(client: fake);
     expect(repo.getStatuses(), throwsA(isA<Exception>()));
   });
+
+  test('falha ao buscar serve cache e marca isStale; sucesso reseta', () async {
+    final fake = _FakeClient();
+    final repo = StatusRepository(client: fake, cacheDuration: Duration.zero);
+    await repo.getStatuses();
+    expect(repo.isStale, isFalse);
+    fake.failNext = true;
+    final result = await repo.getStatuses();
+    expect(result.length, 1);
+    expect(repo.isStale, isTrue);
+    fake.failNext = false;
+    await repo.getStatuses();
+    expect(repo.isStale, isFalse);
+  });
 }
