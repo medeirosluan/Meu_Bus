@@ -132,29 +132,37 @@ class _MapPageState extends ConsumerState<MapPage> {
   }
 
   Future<void> _locate() async {
-    var permission = await Geolocator.checkPermission();
-    if (permission == LocationPermission.denied) {
-      permission = await Geolocator.requestPermission();
-    }
-    if (permission == LocationPermission.denied ||
-        permission == LocationPermission.deniedForever) {
+    try {
+      var permission = await Geolocator.checkPermission();
+      if (permission == LocationPermission.denied) {
+        permission = await Geolocator.requestPermission();
+      }
+      if (permission == LocationPermission.denied ||
+          permission == LocationPermission.deniedForever) {
+        if (mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(
+              content: Text('Permissão de localização negada. Use a busca de estação.'),
+            ),
+          );
+        }
+        return;
+      }
+      final position = await Geolocator.getCurrentPosition();
+      final stations = await ref.read(stationsProvider.future);
+      final nearest =
+          nearestStation(stations, position.latitude, position.longitude);
+      if (!mounted) return;
+      if (nearest != null) {
+        _controller.move(LatLng(nearest.lat, nearest.lon), 15);
+        showStationSheet(context, nearest);
+      }
+    } catch (_) {
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
-            content: Text('Permissão de localização negada. Use a busca de estação.'),
-          ),
+          const SnackBar(content: Text('Não foi possível obter sua localização.')),
         );
       }
-      return;
-    }
-    final position = await Geolocator.getCurrentPosition();
-    final stations = await ref.read(stationsProvider.future);
-    final nearest =
-        nearestStation(stations, position.latitude, position.longitude);
-    if (!mounted) return;
-    if (nearest != null) {
-      _controller.move(LatLng(nearest.lat, nearest.lon), 15);
-      showStationSheet(context, nearest);
     }
   }
 }
